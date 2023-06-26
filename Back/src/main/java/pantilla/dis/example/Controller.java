@@ -1,9 +1,6 @@
 package pantilla.dis.example;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 
@@ -26,6 +23,19 @@ public class Controller {
         DataHanding dataHanding = new DataHanding();
         ArrayList<Coche> listaC;
         listaC = dataHanding.AnadirObjeto1(coche1,"Almacen.json");
+        EscribirJson escribirJSON = new EscribirJson();
+        escribirJSON.escribirFichero(listaC);
+        return listaC;
+    }
+
+    //Vamos a borrar buscando el id
+    @DeleteMapping("/Coche{id}")
+    public ArrayList<Coche> delete(@RequestParam int id)
+    {
+        DataHanding dataHanding = new DataHanding();
+        ArrayList<Coche> listaC;
+        listaC = dataHanding.EliminarObjeto(id,"Almacen.json");
+        //Despues de eliminar, sobreescribes la lista devuelta
         EscribirJson escribirJSON = new EscribirJson();
         escribirJSON.escribirFichero(listaC);
         return listaC;
