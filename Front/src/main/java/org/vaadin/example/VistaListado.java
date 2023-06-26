@@ -18,7 +18,7 @@ public class VistaListado extends VerticalLayout {
     {
         removeAll();
         HorizontalLayout horizontal= new HorizontalLayout();
-        ArrayList<Coche> listaTweets = new ArrayList<>();
+        ArrayList<Coche> listaCoches = new ArrayList<>();
         ArrayList<Coche> listaAux = new ArrayList<>();
 
         Grid<Coche> grid = new Grid<>(Coche.class, false);
@@ -39,11 +39,11 @@ public class VistaListado extends VerticalLayout {
         add(horizontal);
 
         try {
-            listaTweets = DataService.getProductos(listaTweets);
+            listaCoches = DataService.getProductos(listaCoches);
         } catch (URISyntaxException e) {
             throw new RuntimeException(e);
         }
-        grid.setItems(listaTweets);
+        grid.setItems(listaCoches);
 
         this.add(horizontal,grid);
     }
