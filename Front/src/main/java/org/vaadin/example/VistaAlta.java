@@ -41,7 +41,7 @@ public class VistaAlta extends VerticalLayout {
                 ArrayList<Coche> listaAux = new ArrayList<>();
 
                 Coche objeto = new Coche(0, texto1.getValue(),Double.parseDouble(texto2.getValue()),texto3.getValue(),Integer.parseInt(texto4.getValue()),texto5.getValue());
-                listaAux = DataService.aniadirDatosLista(objeto, listaAux);
+                //listaAux = DataService.aniadirDatosLista(objeto, listaAux);
 
 
                 texto1.setValue("");
