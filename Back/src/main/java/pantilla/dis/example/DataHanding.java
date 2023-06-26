@@ -8,6 +8,7 @@ public class DataHanding {
         //En esta funcion se añaden los nuevos elementos enviados desde el front a un ArrayList para posteriormente actualizar la BBDD
         LeerJson reader = new LeerJson();
         ArrayList<Coche> listaAux = reader.LeerFichero(ruta);
+        //Hacemos un id autoincremental sumandole 1 al ultimo id de la lista
         car1.setId(listaAux.get(listaAux.size() - 1).getId() + 1);
         listaAux.add(car1);
         return listaAux;
