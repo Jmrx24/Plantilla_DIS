@@ -26,6 +26,7 @@ public class DataHanding {
                 listaAux.remove(i);
             }
         }
+        //Devolvemos la lista con el elemento ya borrado
         return listaAux;
     }
 }
