@@ -72,10 +72,10 @@ public class Coche {
     {
         return "{\n" +
                 "\"id\": " + id  +  ",\n" +
-                "\"nombre\": " + "\"" + nombre + "\"," + "\n" +
-                "\"valor\": " + valor  +  ",\n" +
-                "\"fluctuacion\": " + fluctuacion  +  ",\n" +
-                "\"categoria\": " + "\"" + categoria + "\"," + "\n" +
+                "\"marca\": " + "\"" + marca + "\"," + "\n" +
+                "\"precio\": " + precio  +  ",\n" +
+                "\"color\": " + color  +  ",\n" +
+                "\"edad\": " + "\"" + edad + "\"," + "\n" +
                 "\"popularidad\": " + "\"" + popularidad + "\"" + "\n" +
                 "}";
     }
