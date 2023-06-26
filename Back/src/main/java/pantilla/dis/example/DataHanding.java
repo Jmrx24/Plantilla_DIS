@@ -13,4 +13,19 @@ public class DataHanding {
         listaAux.add(car1);
         return listaAux;
     }
+
+    public ArrayList<Coche> EliminarObjeto (int id, String ruta)
+    {
+        //Primero leemos la lista que hay, y vamos recorriendola hasta encontrar el id que queremos borrar
+        LeerJson reader = new LeerJson();
+        ArrayList<Coche> listaAux = reader.LeerFichero(ruta);
+        for (int i = 0; i < listaAux.size() ; i++ )
+        {
+            if(listaAux.get(i).getId() == id)
+            {
+                listaAux.remove(i);
+            }
+        }
+        return listaAux;
+    }
 }
