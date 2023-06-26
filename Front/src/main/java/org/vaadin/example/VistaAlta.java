@@ -24,9 +24,9 @@ public class VistaAlta extends VerticalLayout {
 
         Label etiqueta1 = new Label("Marca");
         TextField texto1 = new TextField();
-        Label etiqueta2 = new Label("Color:");
+        Label etiqueta2 = new Label("Precio:");
         TextField texto2 = new TextField();
-        Label etiqueta3 = new Label("Precio:");
+        Label etiqueta3 = new Label("Color:");
         TextField texto3 = new TextField();
         Label etiqueta4 = new Label("Edad:");
         TextField texto4 = new TextField();
@@ -41,7 +41,7 @@ public class VistaAlta extends VerticalLayout {
                 ArrayList<Coche> listaAux = new ArrayList<>();
 
                 Coche objeto = new Coche(0, texto1.getValue(),Double.parseDouble(texto2.getValue()),texto3.getValue(),Integer.parseInt(texto4.getValue()),texto5.getValue());
-                //listaAux = DataService.aniadirDatosLista(objeto, listaAux);
+                listaAux = DataService.aniadirDatosLista(objeto, listaAux);
 
 
                 texto1.setValue("");
