@@ -74,8 +74,8 @@ public class Coche {
                 "\"id\": " + id  +  ",\n" +
                 "\"marca\": " + "\"" + marca + "\"," + "\n" +
                 "\"precio\": " + precio  +  ",\n" +
-                "\"color\": " + color  +  ",\n" +
-                "\"edad\": " + "\"" + edad + "\"," + "\n" +
+                "\"color\": " + "\"" + color + "\"," + "\n" +
+                "\"edad\": " + edad  +  ",\n" +
                 "\"popularidad\": " + "\"" + popularidad + "\"" + "\n" +
                 "}";
     }
