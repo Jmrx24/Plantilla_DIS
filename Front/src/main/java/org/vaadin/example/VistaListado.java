@@ -9,7 +9,7 @@ import java.net.URISyntaxException;
 import java.util.ArrayList;
 
 public class VistaListado extends VerticalLayout {
-    ArrayList<Coche> listaPacientes = new ArrayList<>();
+
     public VistaListado()
     {
 
@@ -32,7 +32,8 @@ public class VistaListado extends VerticalLayout {
         menu.setOpenOnClick(true);
         menu.addItem("Delete", event ->
         {
-            //DataService.eliminarTweet(event.getItem().get(),listaAux);
+            grid.setItems(DataService.eliminarCoche(event.getItem().get(),listaAux));
+
         });
         grid.setAllRowsVisible(true);
         this.add(grid);

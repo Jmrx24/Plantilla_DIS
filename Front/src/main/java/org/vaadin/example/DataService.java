@@ -73,4 +73,31 @@ public class DataService {
 
         return listaC;
     }
+    public static ArrayList<Coche> eliminarCoche(Coche productoNuevo, ArrayList<Coche> listaC){
+        Gson g = new Gson();
+        String urlPrefix = "http://localhost:8081/Coche?id=" + productoNuevo.getId();
+        CloseableHttpClient httpClient = HttpClients.createDefault();
+        String datospasar = productoNuevo.mostrarJson();
+        StringEntity entidad = null;
+        try {
+            entidad = new StringEntity(datospasar);
+            HttpDelete requestpuesta = new HttpDelete(urlPrefix);
+            requestpuesta.setHeader("Content-Type", "application/json");
+            requestpuesta.setHeader("Accept", "application/json");
+            CloseableHttpResponse response = null;
+            response = httpClient.execute(requestpuesta);
+            String respuestaActual = new BasicResponseHandler().handleResponse(response);
+            listaC = g.fromJson(respuestaActual, new TypeToken<ArrayList<Coche>>(){}.getType());
+        } catch (UnsupportedEncodingException e) {
+            throw new RuntimeException(e);
+        } catch (HttpResponseException e) {
+            throw new RuntimeException(e);
+        } catch (ClientProtocolException e) {
+            throw new RuntimeException(e);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+        return listaC;
+    }
 }

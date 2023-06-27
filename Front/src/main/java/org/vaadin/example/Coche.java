@@ -1,5 +1,7 @@
 package org.vaadin.example;
 
+import com.google.gson.Gson;
+
 public class Coche {
     private int id;
     private String marca;
@@ -70,13 +72,7 @@ public class Coche {
 
     public String mostrarJson()
     {
-        return "{\n" +
-                "\"id\": " + id  +  ",\n" +
-                "\"marca\": " + "\"" + marca + "\"," + "\n" +
-                "\"precio\": " + precio  +  ",\n" +
-                "\"color\": " + "\"" + color + "\"," + "\n" +
-                "\"edad\": " + edad  +  ",\n" +
-                "\"popularidad\": " + "\"" + popularidad + "\"" + "\n" +
-                "}";
+        Gson gson = new Gson();
+        return gson.toJson(this);
     }
 }
